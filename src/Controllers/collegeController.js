@@ -4,6 +4,7 @@ const urlRegex = /(https?:\/\/.*\.(?:png|jpg))/;
 
 //================Create College API===============================================//
 const CreateCollege = async function (req, res) {
+  
   try {
   
     let { name, fullName, logoLink } = req.body;
@@ -79,6 +80,8 @@ const CreateCollege = async function (req, res) {
 
 
 const collegeDetails = async function(req,res){
+  res.header('Access-Control-Allow-Origin','*')
+
   try{
      /// Check if query param is given or not
      if(Object.keys(req.query).length==0){
